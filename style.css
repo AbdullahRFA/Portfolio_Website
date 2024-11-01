@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space out the divs */
+    align-items: center; /* Vertically center items */
+    background-color: #BE3144;
+    height: 70px;
+    padding: 0 20px; /* Add padding to the navbar */
+    color: white;
+}
+.navbar div ul {
+  display: flex;
+  list-style-type: none; /* Removes bullets from list items */
+  margin: 0;
+  padding: 0;
+}
+.navbar div ul li {
+    position: relative;
+    margin: 0 15px;
+    padding: 10px 15px; /* Add padding for a larger hover area */
+    align-self: center;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    border-radius: 5px; /* Optional: Rounded corners for background color effect */
+}
+
+.navbar div.right-div ul li:hover {
+    color: #FFD700; /* Text color on hover */
+    background-color: #8B1E3F; /* Background color on hover */
+    transform: scale(1.1); /* Slightly enlarge item */
+}
+
+.navbar div.right-div ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Positioning underline just below text */
+    width: 100%;
+    height: 2px;
+    background-color: #FFD700; /* Match color with hover */
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.navbar div.right-div ul li:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+    transform-origin: left;
+}
+
+.navbar div.left-div ul li.logo {
+    font-weight: bold;
+    margin-left: 0;
+}
+.left-div{
+    background-color: rgb(24, 14, 224);
+    border-radius: 50%;
+    width:8%;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+
+}
+.left-div:hover {
+    transform: scale(1.1) ; /* Slightly enlarge and rotate */
+    background-color: rgb(30, 255, 38); /* Change color on hover */
+    
+}
+.left-div>ul>li:hover{
+    color: black;
+}
+.left-div::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center it horizontally */
+    bottom: -5px; /* Position it below the div */
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background-color: white; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition for width */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+.left-div:hover::after {
+    width: 100%; /* Expand to full width on hover */
+}
