@@ -2,138 +2,136 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-.navbar {
-    display: flex;
-    justify-content: space-between; /* Space out the divs */
-    align-items: center; /* Vertically center items */
-    background-color: #BE3144;
-    height: 70px;
-    padding: 0 20px; /* Add padding to the navbar */
-    color: white;
+body {
+  background: #080808;
+  color: white;
 }
-.navbar div ul {
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/IMG20240423110813.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  padding: 10px 10%;
+}
+nav {
   display: flex;
-  list-style-type: none; /* Removes bullets from list items */
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.navbar div ul li {
-    position: relative;
-    margin: 0 15px;
-    padding: 10px 15px; /* Add padding for a larger hover area */
-    align-self: center;
-    color: white;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
-    border-radius: 5px; /* Optional: Rounded corners for background color effect */
+.logo {
+  margin-top: 10px;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+.header_text {
+  margin-top: 20%;
+  font-size: 30px;
+}
+.header_text h1 {
+  font-size: 60px;
+  margin-top: 20px;
 }
 
-.navbar div.right-div ul li:hover {
-    color: #FFD700; /* Text color on hover */
-    background-color: #8B1E3F; /* Background color on hover */
-    transform: scale(1.1); /* Slightly enlarge item */
+.header_text h1 span {
+  color: #ff004f;
 }
 
-.navbar div.right-div ul li::after {
-    content: '';
+/* About Section */
+
+#about {
+  padding: 80px 0;
+  color: #ababab;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about-col-1 {
+  /* width: 35% */
+  flex-basis: 35%;
+}
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+.about-col-2 {
+  flex-basis: 60%;
+}
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #FF004f;
     position: absolute;
     left: 0;
-    bottom: -5px; /* Positioning underline just below text */
-    width: 100%;
-    height: 2px;
-    background-color: #FFD700; /* Match color with hover */
-    transform: scaleX(0); /* Start with no underline */
-    transform-origin: right;
-    transition: transform 0.3s ease;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
 }
 
-.navbar div.right-div ul li:hover::after {
-    transform: scaleX(1); /* Expand underline on hover */
-    transform-origin: left;
-}
-
-.navbar div.left-div ul li.logo {
-    font-weight: bold;
-    margin-left: 0;
-}
-.left-div{
-    background-color: rgb(24, 14, 224);
-    border-radius: 50%;
-    width:8%;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
 
 }
-.left-div:hover {
-    transform: scale(1.1) ; /* Slightly enlarge and rotate */
-    background-color: rgb(30, 255, 38); /* Change color on hover */
-    
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
 }
-.left-div>ul>li:hover{
-    color: black;
+.tab-contents{
+    display: none;
 }
-.left-div::after {
-    content: '';
-    position: absolute;
-    left: 50%; /* Center it horizontally */
-    bottom: -5px; /* Position it below the div */
-    width: 0; /* Start with no width */
-    height: 2px; /* Height of the underline */
-    background-color: white; /* Color of the underline */
-    transition: width 0.3s ease; /* Smooth transition for width */
-    transform: translateX(-50%); /* Center the underline */
-}
-
-.left-div:hover::after {
-    width: 100%; /* Expand to full width on hover */
-}
-
-/* Media Queries */
-
-/* Tablet devices */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically */
-        height: auto; /* Allow dynamic height */
-        padding: 10px; /* Add padding */
-    }
-
-    .navbar div {
-        margin: 10px 0; /* Add margin for spacing */
-    }
-
-    .navbar div ul li {
-        margin: 5px; /* Reduce margin for smaller screens */
-        font-size: 1em; /* Adjust font size */
-    }
-
-    .left-div {
-        width: 15%; /* Increase size for visibility */
-        height: 15%; /* Adjust height to maintain circular shape */
-    }
-}
-
-/* Mobile devices */
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically */
-        height: auto; /* Allow dynamic height */
-        padding: 5px; /* Add padding */
-    }
-
-    .navbar div {
-        margin: 5px 0; /* Add margin for spacing */
-    }
-
-    .navbar div ul li {
-        margin: 3px; /* Further reduce margin for smaller screens */
-        font-size: 0.9em; /* Adjust font size */
-    }
-
-    .left-div {
-        width: 20%; /* Increase size for visibility */
-        height: 20%; /* Adjust height to maintain circular shape */
-    }
+.tab-contents.active-tab{
+    display: block;
 }
