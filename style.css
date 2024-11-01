@@ -89,3 +89,51 @@
 .left-div:hover::after {
     width: 100%; /* Expand to full width on hover */
 }
+
+/* Media Queries */
+
+/* Tablet devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow dynamic height */
+        padding: 10px; /* Add padding */
+    }
+
+    .navbar div {
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .navbar div ul li {
+        margin: 5px; /* Reduce margin for smaller screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .left-div {
+        width: 15%; /* Increase size for visibility */
+        height: 15%; /* Adjust height to maintain circular shape */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow dynamic height */
+        padding: 5px; /* Add padding */
+    }
+
+    .navbar div {
+        margin: 5px 0; /* Add margin for spacing */
+    }
+
+    .navbar div ul li {
+        margin: 3px; /* Further reduce margin for smaller screens */
+        font-size: 0.9em; /* Adjust font size */
+    }
+
+    .left-div {
+        width: 20%; /* Increase size for visibility */
+        height: 20%; /* Adjust height to maintain circular shape */
+    }
+}
