@@ -54,6 +54,9 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
 }
+nav ul li a:hover{
+    color: rgb(0, 255, 242);
+}
 .header_text {
   margin-top: 20%;
   font-size: 30px;
