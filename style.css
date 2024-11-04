@@ -411,3 +411,24 @@ nav .fas{
     font-size: 14px;
   }
 }
+#msg{
+  color: #61b752;
+  margin-top: -40px;
+  display: block;
+}
+
+#email_add{
+  text-decoration: none;
+  color: white;
+}
+#email_add:hover{
+  color: blue;
+}
+
+#phone{
+  text-decoration: none;
+  color: white;
+}
+#phone:hover{
+  color: blue;
+}

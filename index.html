@@ -237,8 +237,8 @@
         <div class="row">
           <div class="contact-left">
             <h1 class="sub-title">Contact Me</h1>
-            <p><i class="fas fa-paper-plane"></i><a href="mailto:shakibrybmn@gmail.com?subject=Hello%20there&body=I%20would%20like%20to%20know%20more%20about...">shakibrybmn@gmail.com</a></p>
-            <p><i class="fas fa-phone-square"></i><a href="tel:+8801716260866">01716260866</a></p>
+            <p><i class="fas fa-paper-plane"></i><a href="mailto:shakibrybmn@gmail.com?subject=Hello%20there&body=I%20would%20like%20to%20know%20more%20about..." id="email_add">shakibrybmn@gmail.com</a></p>
+            <p><i class="fas fa-phone-square"></i><a href="tel:+8801716260866" id="phone">01716260866</a></p>
             <div class="social-icons">
               <a href="https://www.facebook.com/profile.php?id=100008509008772" target="_blank"><i class="fab fa-facebook"></i></a>
               <a href="https://x.com/AbdullahRFA" target="_blank"><i class="fab fa-twitter-square"></i></a>
@@ -269,7 +269,7 @@
               ></textarea>
               <button type="submit" class="btn btn2">Submit</button>
             </form>
-            <span id="msg">Hello</span>
+            <span id="msg"></span>
           </div>
         </div>
       </div>
@@ -311,11 +311,18 @@
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwRRuxWa5RiaeWaYRDPn-e43rbACjz7jfvWtVLXMqufmpsAwew9rLYxH0-SVngOSfU-/exec'
       const form = document.forms['submit-to-google-sheet']
-    
+    const msg = document.getElementById("msg")
+
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
+          .then(response => {
+            msg.innerHTML="Message Sent Successfully"
+            setTimeout(function(){
+              msg.innerHTML=""
+            },5000)
+            form.reset()
+          })
           .catch(error => console.error('Error!', error.message))
       })
     </script>
