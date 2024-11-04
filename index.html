@@ -245,10 +245,10 @@
               <a href="https://github.com/AbdullahRFA" target="_blank"><i class="fa-brands fa-github"></i></a>
               <a href="https://www.linkedin.com/in/abdullah-nazmus-sakib-04024b261/" target="_blank"><i class="fab fa-linkedin"></i><a>
             </div>
-            <a href="images/pp.jpeg" download class="btn btn2">Download CV</a>
+            <a href="https://github.com/AbdullahRFA/Portfolio_Website/blob/main/images/Personal%20Portfolio%20Website.pdf" target="_blank" download="Personal_Portfolio_Website.pdf" class="btn btn2">Download CV</a>
           </div>
           <div class="contact-right">
-            <form action="">
+            <form action="submit-to-google-sheet" name="submit-to-google-sheet">
               <input
                 type="text"
                 name="Name"
@@ -257,18 +257,19 @@
               />
               <input
                 type="email"
-                name="email"
+                name="Email"
                 placeholder="Your Email"
                 required
               />
               <textarea
-                name="Mesasge"
+                name="Message"
                 id=""
                 rows="6"
                 placeholder="Your Message"
               ></textarea>
               <button type="submit" class="btn btn2">Submit</button>
             </form>
+            <span id="msg">Hello</span>
           </div>
         </div>
       </div>
@@ -306,5 +307,18 @@
         sidemenu.style.right = "-200px";
       }
     </script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwRRuxWa5RiaeWaYRDPn-e43rbACjz7jfvWtVLXMqufmpsAwew9rLYxH0-SVngOSfU-/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    
   </body>
 </html>

@@ -309,7 +309,9 @@ transition: background 0.5s;
   display: inline-block;
   background: #FF004f;
 }
-
+.btn.btn2:hover{
+  background-color: green;
+}
 .contact-right form{
   width: 100%;
 
@@ -353,7 +355,7 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
   #header{
-    background-image: url("images/Screenshot\ 2024-09-09\ at\ 12.58.41\ PM.png");
+    background-image: url("https://github.com/AbdullahRFA/Portfolio_Website/blob/main/images/pic_with_banana_tree.jpeg?raw=true");
   }
   #header_text{
     margin-top: 60%;
@@ -367,7 +369,7 @@ nav .fas{
     font-size: 25px;
   }
   nav ul{
-    background: #ff004f;
+    background: #af1848;
     position: fixed;
     top: 0;
     right: -200px;
