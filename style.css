@@ -410,6 +410,9 @@ nav .fas{
   .copy-right{
     font-size: 14px;
   }
+  #rfa{
+    font-size: 16px;
+  }
 }
 #msg{
   color: #61b752;
@@ -439,4 +442,26 @@ nav .fas{
 #degination{
   color: yellow;
   font-weight:bold;
+}
+
+.nav-left{
+  display: flex;
+}
+#rfa{
+  color: #ff004f;
+  align-self: auto;
+  margin: 20px 0 0 20px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 30px;
+  transition: transform 1s;
+}
+#rfa:hover{
+  color: white;
+  transform: rotate(360deg);
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 15px;
 }
