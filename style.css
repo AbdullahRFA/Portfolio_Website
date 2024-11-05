@@ -36,6 +36,7 @@ nav {
   width: 40px;
   height: 50px;
   border-radius: 50%;
+  /* box-shadow: 5px 5px 5px 5px orange; */
 }
 nav ul li {
   display: inline-block;
@@ -446,6 +447,7 @@ nav .fas{
 
 .nav-left{
   display: flex;
+  
 }
 #rfa{
   color: #ff004f;
@@ -464,4 +466,10 @@ nav .fas{
   border-radius: 10px;
   padding: 10px;
   margin-top: 15px;
+}
+.nav-left img{
+  transition: transform 0.5s;
+}
+.nav-left img:hover{
+  transform: scale(1.5);
 }
