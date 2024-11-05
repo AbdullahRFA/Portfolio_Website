@@ -7,8 +7,10 @@ function updateGreeting() {
       greetingMessage = "Good morning!";
     } else if (currentHour >= 12 && currentHour < 18) {
       greetingMessage = "Good afternoon!";
-    } else {
+    } else if(currentHour>=18){
       greetingMessage = "Good evening!";
+    }else{
+      greetingMessage="Good night!"
     }
   
     greetingElement.innerText = greetingMessage;
