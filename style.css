@@ -432,3 +432,11 @@ nav .fas{
 #phone:hover{
   color: blue;
 }
+#greeting{
+  color: aqua;
+  padding-bottom: 15px;
+}
+#degination{
+  color: yellow;
+  font-weight:bold;
+}
